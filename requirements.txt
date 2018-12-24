@@ -1,3 +1,2 @@
-jinja2
-pyyaml
-deepmerge
+Jinja2==2.10
+pyyaml==3.13
