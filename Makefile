@@ -45,7 +45,7 @@ $(AUTO_GENERATED):
 	docker run -it --rm \
 		-v ${PWD}/_dist6:/var/tmp/ \
 		quay.io/zoonage/centos6-rpm-build \
-		/bin/bash -c '/usr/bin/yum install --verbose -y /var/tmp/$@*.rpm'
+		/bin/bash -c '/usr/bin/yum remove -y $@*; /usr/bin/yum install --verbose -y /var/tmp/$@*.rpm'
 	# Build for centos 7
 	docker run -it --rm \
 		-v ${PWD}/$@:/rpmbuild/SOURCES \
@@ -57,7 +57,7 @@ $(AUTO_GENERATED):
 	docker run --privileged -it --rm \
 		-v ${PWD}/_dist7:/var/tmp/ \
 		quay.io/zoonage/centos7-rpm-build \
-		/bin/bash -c '/usr/bin/yum install --verbose -y /var/tmp/$@*.rpm'
+		/bin/bash -c '/usr/bin/yum remove -y $@*; /usr/bin/yum install --verbose -y /var/tmp/$@*.rpm'
 
 $(PACKAGES7):
 	docker run --rm \
