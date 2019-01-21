@@ -9,6 +9,12 @@ for CentOS 7.
 The packages are available in [the packagecloud repository][2] and can be used
 by adding the following `/etc/yum.repos.d/prometheus.repo`:
 
+
+### Building Pkg generate Env 
+
+Excute the shell script file ``` centos7_build_env_setup.sh ``` on Centos 7 System
+to isntall python3 and deps pkgs
+
 ### CentOS 7
 ``` conf
 [prometheus]
