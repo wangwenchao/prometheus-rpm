@@ -41,8 +41,12 @@ case "$1" in
     start
     ;;
   status)
-  status $NAME
-  ;;
+    status $NAME
+    ;;
+  reload)
+    echo "Sending SIGHUP to $NAME"
+    kill -SIGHUP $(pidofproc $NAME)
+    ;;
   *)
-    echo "Usage: $0 {start|stop|restart|status}"
+    echo "Usage: $0 {start|stop|reload|restart|status}"
 esac
