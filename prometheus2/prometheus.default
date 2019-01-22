@@ -1,1 +1,1 @@
-PROMETHEUS_OPTS='--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/var/lib/prometheus/data'
+PROMETHEUS_OPTS='--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/data/prometheus/data --storage.tsdb.retention=30d --web.enable-lifecycle --web.enable-admin-api'
