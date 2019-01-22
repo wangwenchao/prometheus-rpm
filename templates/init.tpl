@@ -48,5 +48,7 @@ case "$1" in
     kill -SIGHUP $(pidofproc $NAME)
     ;;
   *)
-    echo "Usage: $0 {start|stop|reload|restart|status}"
+  echo "Usage: $0 {start|stop|reload|restart|status}"
+  exit 1
+  ;;  
 esac
