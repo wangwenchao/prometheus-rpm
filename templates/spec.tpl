@@ -3,8 +3,8 @@
 #############################
 {%- block definitions %}
 %define debug_package %{nil}
-%define user {{user}}
-%define group {{group}}
+%define user prometheus
+%define group prometheus
 {% endblock definitions %}
 
 {%- block amble %}
@@ -57,7 +57,7 @@ install -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/default/%{name}
 install -D -m 644 %{SOURCE3} %{buildroot}%{_initrddir}/%{name}
 %else 
     %if 0%{?el6} 
-    install -D -m 644 %{SOURCE3} %{buildroot}%{_initddir}/%{name}
+    install -D -m 755 %{SOURCE3} %{buildroot}%{_initddir}/%{name}
     %else
     install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
     %endif
